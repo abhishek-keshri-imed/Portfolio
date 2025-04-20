@@ -1,0 +1,75 @@
+/* Wrapper for the entire navbar */
+.n-wrapper {
+    height: 10vh;
+    /* 10% of viewport height */
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    /* Space between left and right parts */
+}
+
+/* Left section of the navbar (logo + toggle) */
+.n-left {
+    flex: 1;
+    /* Take equal flexible space */
+    display: flex;
+    /* Flexbox layout */
+    align-items: center;
+    /* Center vertically */
+    gap: 2rem;
+    /* Space between logo and toggle */
+}
+
+/* Styling the name/logo */
+.n-name {
+    font-size: 1.3rem;
+    /* Font size */
+    font-weight: bold;
+    /* Make text bold */
+}
+
+/* Right section of the navbar (menu list + button) */
+.n-right {
+    display: flex;
+    /* Flexbox layout */
+    flex: 1;
+    /* Take equal flexible space */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    font-weight: 400;
+    /* Normal font weight */
+}
+
+/* Container for the navigation list */
+.n-list {
+    flex: 10;
+    /* Take 10 times the space compared to button */
+}
+
+/* Styling the unordered list (ul) inside the list */
+.n-list>ul {
+    display: flex;
+    /* Display menu items in a row */
+    gap: 2rem;
+    /* Space between each menu item */
+    margin-right: 4rem;
+    /* Margin at the right side */
+    list-style: none;
+    /* Remove bullet points */
+}
+
+/* Styling individual list items (li) */
+.n-list>ul>li {
+    transition: color 0.3s ease;
+    /* Smooth color transition on hover */
+}
+
+/* Hover effect for menu items */
+.n-list>ul>li:hover {
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    color: var(--orange);
+    /* Change text color to orange (from :root variables) */
+}
