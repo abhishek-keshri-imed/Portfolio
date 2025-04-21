@@ -1,0 +1,124 @@
+/* ================= Main container for the Intro section ================= */
+.intro {
+    display: flex;
+    height: 77vh;
+    margin-top: 6rem;
+}
+
+/* ================= Left section of the Intro ================= */
+.i-left {
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem; /* Space between child elements */
+}
+
+/* Container for Name and Description */
+.i-name {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for the first line: "Hi! I Am" */
+.i-name > :nth-child(1) {
+    color: var(--black);
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+/* Styling for the second line: "Abhishek Keshri" */
+.i-name > :nth-child(2) {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+/* Styling for the third paragraph (Professional Description) */
+.i-name > :nth-child(3) {
+    margin-top: 10px; /* Add space after name */
+}
+
+/* ================= Button styling inside the left section ================= */
+.i-button {
+    width: 8rem;
+    height: 2rem;
+}
+
+/* ================= Social Media Icons ================= */
+.i-icons {
+    display: flex;
+    gap: 0rem; /* No gap initially; controlled with transform */
+}
+
+/* Styling for each social media icon */
+.i-icons > * {
+    transform: scale(0.5); /* Shrink icons to 50% of original size */
+}
+
+/* Hover effect for icons */
+.i-icons > *:hover {
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* ================= Right section of the Intro ================= */
+.i-right {
+    flex: 1;
+    position: relative;
+}
+
+/* Common styles for all images inside i-right */
+.i-right > * {
+    position: absolute;
+    z-index: 1; /* Layer images properly */
+}
+
+/* First background vector image positioning */
+.i-right > :nth-child(1) {
+    transform: scale(0.69);
+    left: -15%;
+    top: -9%;
+}
+
+/* Second background vector image positioning */
+.i-right > :nth-child(2) {
+    transform: scale(0.67);
+    left: -3rem;
+    top: -4.6rem;
+}
+
+/* Main Boy Image positioning */
+.i-right > :nth-child(3) {
+    transform: scale(0.8);
+    left: 10%;
+    top: -10.6rem;
+}
+
+/* Glasses Emoji image positioning */
+.i-right > :nth-child(4) {
+    transform: scale(0.5);
+    left: -10%;
+    top: -7.6rem;
+}
+
+
+
+/* Blue blur on the right side */
+.blue-blur {
+    background: #c1f5ff; /* Light blue color */
+    position: absolute;
+    width: 100%; /* Cover full right div */
+    height: 100%; /* Full height */
+    border-radius: 0; /* No circle, full rectangle */
+    filter: blur(50px); /* Heavy blur effect */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Behind images */
+}
+
+/* ================= Highlighted text styling (used for important words) ================= */
+.highlight {
+    font-weight: bold; /* Bold important keywords */
+    padding: 0.2rem 0.4rem; /* Optional: space around highlight */
+    font-size: 1.2rem; /* Slightly larger font size */
+}
