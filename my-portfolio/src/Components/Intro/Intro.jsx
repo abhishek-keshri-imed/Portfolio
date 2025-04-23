@@ -94,17 +94,17 @@ const Intro = () => {
         {/* FloatingDiv components showcasing achievements and skills */}
 
         {/* FloatingDiv 1: Full Stack Developer Badge */}
-        <div style={{ top: "14%", left: "60%" }}>
+        <div className="fd1" style={{ top: "14%", left: "60%" }}>
           <FloatingDiv image={Crown} text1="Full Stack" text2="Developer" />
         </div>
 
         {/* FloatingDiv 2: SQL Developer Badge */}
-        <div style={{ top: "34%", left: "60%" }}>
+        <div className="sql2" style={{ top: "34%", left: "60%" }}>
           <FloatingDiv image={Database} text1="SQL" text2="Developer" />
         </div>
 
         {/* FloatingDiv 3: Award Badge */}
-        <div style={{ top: "50%", left: "-10%" }}>
+        <div className="ab3" style={{ top: "50%", left: "-10%" }}>
           <FloatingDiv image={Thumb} text1="Star of the Month" text2="Award" />
         </div>
 

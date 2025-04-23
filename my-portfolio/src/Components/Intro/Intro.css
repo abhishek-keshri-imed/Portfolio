@@ -11,7 +11,8 @@
     position: relative;
     flex: 1;
     flex-direction: column;
-    gap: 2rem; /* Space between child elements */
+    gap: 2rem;
+    /* Space between child elements */
 }
 
 /* Container for Name and Description */
@@ -21,22 +22,23 @@
 }
 
 /* Styling for the first line: "Hi! I Am" */
-.i-name > :nth-child(1) {
+.i-name> :nth-child(1) {
     color: var(--black);
     font-weight: bold;
     font-size: 3rem;
 }
 
 /* Styling for the second line: "Abhishek Keshri" */
-.i-name > :nth-child(2) {
+.i-name> :nth-child(2) {
     color: var(--orange);
     font-weight: bold;
     font-size: 3rem;
 }
 
 /* Styling for the third paragraph (Professional Description) */
-.i-name > :nth-child(3) {
-    margin-top: 10px; /* Add space after name */
+.i-name> :nth-child(3) {
+    margin-top: 10px;
+    /* Add space after name */
 }
 
 /* ================= Button styling inside the left section ================= */
@@ -48,17 +50,20 @@
 /* ================= Social Media Icons ================= */
 .i-icons {
     display: flex;
-    gap: 0rem; /* No gap initially; controlled with transform */
+    gap: 0rem;
+    /* No gap initially; controlled with transform */
 }
 
 /* Styling for each social media icon */
-.i-icons > * {
-    transform: scale(0.5); /* Shrink icons to 50% of original size */
+.i-icons>* {
+    transform: scale(0.5);
+    /* Shrink icons to 50% of original size */
 }
 
 /* Hover effect for icons */
-.i-icons > *:hover {
-    cursor: pointer; /* Pointer cursor on hover */
+.i-icons>*:hover {
+    cursor: pointer;
+    /* Pointer cursor on hover */
 }
 
 /* ================= Right section of the Intro ================= */
@@ -68,34 +73,35 @@
 }
 
 /* Common styles for all images inside i-right */
-.i-right > * {
+.i-right>* {
     position: absolute;
-    z-index: 1; /* Layer images properly */
+    z-index: 1;
+    /* Layer images properly */
 }
 
 /* First background vector image positioning */
-.i-right > :nth-child(1) {
+.i-right> :nth-child(1) {
     transform: scale(0.69);
     left: -15%;
     top: -9%;
 }
 
 /* Second background vector image positioning */
-.i-right > :nth-child(2) {
+.i-right> :nth-child(2) {
     transform: scale(0.67);
     left: -3rem;
     top: -4.6rem;
 }
 
 /* Main Boy Image positioning */
-.i-right > :nth-child(3) {
+.i-right> :nth-child(3) {
     transform: scale(0.8);
     left: 10%;
     top: -10.6rem;
 }
 
 /* Glasses Emoji image positioning */
-.i-right > :nth-child(4) {
+.i-right> :nth-child(4) {
     transform: scale(0.5);
     left: -10%;
     top: -7.6rem;
@@ -105,20 +111,193 @@
 
 /* Blue blur on the right side */
 .blue-blur {
-    background: #c1f5ff; /* Light blue color */
+    background: #c1f5ff;
+    /* Light blue color */
     position: absolute;
-    width: 100%; /* Cover full right div */
-    height: 100%; /* Full height */
-    border-radius: 0; /* No circle, full rectangle */
-    filter: blur(50px); /* Heavy blur effect */
+    width: 100%;
+    /* Cover full right div */
+    height: 100%;
+    /* Full height */
+    border-radius: 0;
+    /* No circle, full rectangle */
+    filter: blur(50px);
+    /* Heavy blur effect */
     top: 0;
     left: 0;
-    z-index: 0; /* Behind images */
+    z-index: 0;
+    /* Behind images */
 }
 
 /* ================= Highlighted text styling (used for important words) ================= */
 .highlight {
-    font-weight: bold; /* Bold important keywords */
-    padding: 0.2rem 0.4rem; /* Optional: space around highlight */
-    font-size: 1.2rem; /* Slightly larger font size */
+    font-weight: bold;
+    /* Bold important keywords */
+    padding: 0.2rem 0.4rem;
+    /* Optional: space around highlight */
+    font-size: 1.2rem;
+    /* Slightly larger font size */
+}
+
+@media (min-width: 901px) and (max-width: 1273px) {
+
+    /* ================= Right section of the Intro ================= */
+    .i-right {
+        flex: 1;
+        position: relative;
+    }
+
+    /* Common styles for all images inside i-right */
+    .i-right>* {
+        position: absolute;
+        z-index: 1;
+        /* Layer images properly */
+    }
+
+    /* First background vector image positioning */
+    .i-right> :nth-child(1) {
+        transform: scale(0.5);
+        left: -15%;
+        top: -9%;
+    }
+
+    /* Second background vector image positioning */
+    .i-right> :nth-child(2) {
+        transform: scale(0.5);
+        left: -3rem;
+        top: -4.6rem;
+    }
+
+    /* Main Boy Image positioning */
+    .i-right> :nth-child(3) {
+        transform: scale(0.7);
+        left: 10%;
+        top: -5.6rem;
+    }
+
+    /* Glasses Emoji image positioning */
+    .i-right> :nth-child(4) {
+        transform: scale(0.4);
+        left: -10%;
+        top: -7.6rem;
+    }
+
+
+    /* Blue blur on the right side */
+    .blue-blur {
+        background: #c1f5ff;
+        /* Light blue color */
+        position: absolute;
+        width: 100%;
+        /* Cover full right div */
+        height: 100%;
+        /* Full height */
+        border-radius: 0;
+        /* No circle, full rectangle */
+        filter: blur(50px);
+        /* Heavy blur effect */
+        top: 0;
+        left: 0;
+        z-index: 0;
+        /* Behind images */
+    }
+
+}
+
+@media (min-width: 901px) and (max-width: 1273px) {
+
+    .fd1,
+    .sql2,
+    .ab3 {
+        transform: scale(0.7);
+        /* Smaller size */
+        z-index: 2;
+    }
+
+    .fd1 {
+        top: 12%;
+        left: 55%;
+    }
+
+    .sql2 {
+        top: 30%;
+        left: 55%;
+    }
+
+    .ab3 {
+        top: 48%;
+        left: -5%;
+    }
+}
+
+
+@media screen and (min-width: 901px) and (max-width: 1087px) {
+    .intro {
+        margin-bottom: 150px;
+    }
+}
+
+@media screen and (min-width: 642px) and (max-width:900px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .i-right {
+        transform: scale(0.8);
+    }
+
+    /* First background vector image positioning */
+    .i-right> :nth-child(1) {
+        transform: scale(0.5);
+        left: -15%;
+        top: 45%;
+    }
+
+    /* Second background vector image positioning */
+    .i-right> :nth-child(2) {
+        transform: scale(0.5);
+        left: 8rem;
+        top: -5rem;
+    }
+
+
+    /* Main Boy Image positioning */
+    .i-right> :nth-child(3) {
+        transform: scale(0.9);
+        left: 18%;
+        top: -5.6rem;
+    }
+
+    /* Glasses Emoji image positioning */
+    .i-right> :nth-child(4) {
+        display: none;
+    }
+
+    .intro {
+        margin-bottom: 350px;
+    }
+
+
+
+    .fd1,
+    .sql2,
+    .ab3 {
+        transform: scale(0.9);
+        /* Smaller size */
+        z-index: 2;
+    }
+
+    .fd1 {
+        top: 10rem !important;
+        left: -150px !important;
+    }
+
+    .sql2 {
+        top: -50% !important;
+        left: 80% !important;
+    }
+
+    .ab3 {
+        top: 20%;
+        left: -5%;
+    }
 }

@@ -41,6 +41,7 @@
     .container {
       flex-direction: column; /* Stack columns vertically */
       gap: 1.5rem; /* Add space between stacked items */
+      margin-top: 50px;
     }
   
     .card {

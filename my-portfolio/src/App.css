@@ -73,3 +73,12 @@
   border: 1px solid var(--orange);
   /* Adds a thin 1px solid orange border around the button */
 }
+
+
+/* Media Queries for Responsiveness */
+@media  screen and (max-width: 480px) {
+  .App
+  {
+  padding: 0.5rem 1rem;
+  }
+}
