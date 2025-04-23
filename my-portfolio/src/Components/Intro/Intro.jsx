@@ -46,7 +46,7 @@ const Intro = () => {
         </div>
 
         {/* 'Hire Me' call-to-action button */}
-        <button className="button i-button">Hire me</button>
+        <button className="button i-button">Download CV</button>
 
         {/* Social media icons */}
         <div className="i-icons">

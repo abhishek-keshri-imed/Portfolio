@@ -34,3 +34,21 @@
         transform: rotate(360deg);
     }
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1053px) {
+    /* Stack columns vertically when screen width is less than 1053px */
+    .container {
+      flex-direction: column; /* Stack columns vertically */
+      gap: 1.5rem; /* Add space between stacked items */
+    }
+  
+    .card {
+      width: 100%; /* Make each card take full width */
+      flex-direction: row; /* Ensure cards are still in row alignment */
+    }
+  
+    .col-md-3 {
+      flex: 1 1 100%; /* Make each column take full width */
+    }
+  }

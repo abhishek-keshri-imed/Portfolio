@@ -3,6 +3,7 @@ import Intro from './Components/Intro/Intro';
 import Navbar from './Components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Skill from './Components/Skills/Skill';
+import Exp from './Components/Experience/Exp';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Navbar/>
       <Intro/>
       <Skill/>
+      <Exp/>
     </div>
   );
 }
