@@ -1,158 +1,131 @@
-/* ================= Intro Section ================= */
+/* ========== Intro Section ========== */
 .intro {
-    display: flex;
-    height: 77vh;
-    margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 83vh;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+
 }
 
 .i-left {
-    display: flex;
-    position: relative;
-    flex: 1;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
-.i-name {
-    display: flex;
-    flex-direction: column;
+.i-right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-center;
+  gap: 1.5rem;
 }
 
+
+
+/* ========== Text Styling ========== */
 .i-name > :nth-child(1),
 .i-name > :nth-child(2) {
-    font-weight: bold;
-    font-size: 3rem;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.2;
 }
-.i-name > :nth-child(1) { color: var(--black); }
-.i-name > :nth-child(2) { color: var(--orange); }
-.i-name > :nth-child(3) { margin-top: 10px; }
 
+.i-name > :nth-child(1) {
+  color: var(--black);
+}
+
+.i-name > :nth-child(2) {
+  color: var(--orange);
+}
+
+.i-name > :nth-child(3) {
+  margin-top: 10px;
+}
+
+/* ========== Button ========== */
 .i-button {
-    width: 8rem;
-    height: 2rem;
+  width: 8rem;
+  height: 2rem;
 }
 
+/* ========== Social Icons ========== */
 .i-icons {
-    display: flex;
-    gap: 0;
-}
-.i-icons > * {
-    transform: scale(0.5);
-    cursor: pointer;
+  display: flex;
+  gap: 1rem;
 }
 
-/* ================= Right Section ================= */
+.i-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* ========== Right Side ========== */
 .i-right {
-    flex: 1;
-    position: relative;
+  position: relative;
+  align-items: center;
 }
-.i-right > * {
-    position: absolute;
-    z-index: 1;
-}
-.i-right > :nth-child(1) { transform: scale(0.69); left: -15%; top: -9%; }
-.i-right > :nth-child(2) { transform: scale(0.67); left: -3rem; top: -4.6rem; }
-.i-right > :nth-child(3) { transform: scale(0.8); left: 10%; top: -10.6rem; }
-.i-right > :nth-child(4) { transform: scale(0.5); left: -10%; top: -7.6rem; }
 
-.blue-blur {
-    background: #c1f5ff;
-    position: absolute;
+.i-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ========== Responsive Layout ========== */
+@media (max-width: 1049px) {
+  .intro {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .i-right {
+    align-items: center;
+    margin-bottom: 10vh;
+  }
+
+  .i-right img {
+    width: 220px;
+    transform: scale(1.9);
+  }
+}
+
+@media (max-width: 640px) {
+  .i-name > :nth-child(1),
+  .i-name > :nth-child(2) {
+    font-size: 2.2rem;
+  }
+
+  .i-right img {
+    width: 180px;
+  }
+
+  .intro {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .i-right img {
+    width: 160px;
+  }
+
+  .i-button {
     width: 100%;
-    height: 100%;
-    border-radius: 0;
-    filter: blur(50px);
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
+  }
 
-.highlight {
-    font-weight: bold;
-    padding: 0.2rem 0.4rem;
-    font-size: 1.2rem;
-}
-
-/* ================= Media Queries ================= */
-
-/* Reusable card positions */
-.fd1, .sql2, .ab3 {
-    transform: scale(0.9);
-    z-index: 2;
-}
-.fd1 { top: 10rem !important; left: -150px !important; }
-.sql2 { top: -50%; left: 80%  }
-.ab3  { top: 20%; left: -5%; }
-
-/* Screens 901px - 1273px */
-@media (min-width: 901px) and (max-width: 1273px) {
-    .i-right > :nth-child(1) { transform: scale(0.5); }
-    .i-right > :nth-child(2) { transform: scale(0.5); }
-    .i-right > :nth-child(3) { transform: scale(0.7); top: -5.6rem; }
-    .i-right > :nth-child(4) { transform: scale(0.4); }
-    .blue-blur { filter: blur(50px); }
-
-    .fd1, .sql2, .ab3 {
-        transform: scale(0.7);
-    }
-    .fd1 { top: 12%; left: 55%; }
-    .sql2 { top: 30%; left: 55%; }
-    .ab3  { top: 48%; left: -5%; }
-
-    .intro { margin-bottom: 15vh; }
-}
-
-
-/* Screens 642px - 900px */
-@media (min-width: 642px) and (max-width: 900px) {
-    .intro {
-        flex-direction: column;
-        margin-bottom: 70vh !important; /* Adjust as needed */
-    }
-    .i-right { transform: scale(0.8); }
-    .i-right > :nth-child(1) { display: none; }
-    .i-right > :nth-child(2) { display: none; }
-    .i-right > :nth-child(3) { transform: scale(1); left: 18%;top: 45%; }
-    .i-right > :nth-child(4) { display: none; }
-}
-
-/* Screens 580px - 641px */
-@media (min-width: 579px) and (max-width: 641px) {
-    .intro {
-        flex-direction: column;
-        margin-bottom: 10vh !important; /* Adjust as needed */
-    }
-    .i-right { transform: scale(0.7); }
-    .i-right > :nth-child(1) {display: none;  }
-    .i-right > :nth-child(2) { display: none;   }
-    .i-right > :nth-child(3) { transform: scale(0.8); left: 18%;top: 45%;  }
-    .i-right > :nth-child(4) { display: none; }
-}
-
-/* Screens 300px - 579px */
-@media (min-width: 386px) and  (max-width: 579px) {
-    .intro {
-        flex-direction: column;
-        margin-bottom: 550px!important; /* Adjust as needed */
-    }
-    .i-right { transform: scale(0.6); }
-    .i-right > :nth-child(1) { display: none;  }
-    .i-right > :nth-child(2) { display: none; }
-    .i-right > :nth-child(3) { transform: scale(1); left: 6% !important; top: 5.6rem !important; }
-    .i-right > :nth-child(4) { display: none; }
-}
-
-
-/* Screens 300px - 579px */
-@media   (max-width: 386px) {
-    .intro {
-        flex-direction: column;
-        margin-bottom: 650px!important; /* Adjust as needed */
-    }
-    .i-right { transform: scale(0.6); }
-    .i-right > :nth-child(1) { display: none;  }
-    .i-right > :nth-child(2) { display: none;  }
-    .i-right > :nth-child(3) { transform: scale(1); left: 6% !important; top: 5.6rem !important; }
-    .i-right > :nth-child(4) { display: none; }
-    .sql2 { top:-70%!important; ; left: 55%; }
+  .i-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

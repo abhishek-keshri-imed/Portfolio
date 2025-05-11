@@ -1,55 +1,81 @@
+/* ================= Container and Card Styling ================= */
 .container {
-    padding: 0;  /* Optional: removes container padding */
-  }
+  padding: 0;  /* Optional: removes container padding */
+  justify-content: space-between;
+  width: 100%; /* Ensure container takes full width */
+  margin-top: 50vh;
+  
+}
 
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-image: linear-gradient(45deg, #6e8efb, #a777e3) 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-image: linear-gradient(45deg, #6e8efb, #a777e3) 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Hover effect */
 .card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-/* Image styling inside card */
 .card img {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .card:hover img {
-    animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Media Queries for Responsiveness */
+/* ================= Media Queries for Responsiveness ================= */
 @media (max-width: 1053px) {
-    /* Stack columns vertically when screen width is less than 1053px */
-    .container {
-      flex-direction: column; /* Stack columns vertically */
-      gap: 1.5rem; /* Add space between stacked items */
-      margin-top: 50px;
-    }
-  
-    .card {
-      width: 100%; /* Make each card take full width */
-      flex-direction: row; /* Ensure cards are still in row alignment */
-    }
-  
-    .col-md-3 {
-      flex: 1 1 100%; /* Make each column take full width */
-    }
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 50px;
   }
+
+  .card {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .col-md-3 {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 30px;
+  }
+
+  .card img {
+    width: 40px;
+    height: 40px;
+  }
+}

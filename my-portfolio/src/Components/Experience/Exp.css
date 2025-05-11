@@ -68,4 +68,7 @@
     flex-direction: column; /* Stack h3 and p vertically inside card */
     gap: 0.5rem; /* Small gap between h3 and p */
   }
+  .column {
+      width: 100%; /* Ensure columns take full width on small screens */
+    }
 }

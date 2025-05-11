@@ -6,7 +6,7 @@ function Navbar() {
     <div className='n-wrapper'> 
     <div className="n-left">
     <div className="n-name">Abhishek</div>
-    <span>Toggle</span>
+    
     </div>
     <div className="n-right">
     <div className="n-list">

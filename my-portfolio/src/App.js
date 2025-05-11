@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Skill from './Components/Skills/Skill';
 import Exp from './Components/Experience/Exp';
-
+import Project from './Components/Project/Project';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <Intro/>
       <Skill/>
       <Exp/>
+      <Project/>
     </div>
   );
 }

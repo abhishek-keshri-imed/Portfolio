@@ -68,21 +68,22 @@ const skills = [
 // Skill component to render the list of skills
 const Skill = () => {
   return (
-    <div className="container mt-4 mb-4" >
+    <div className="container mt-4 mb-4">
       {/* Row for responsive grid layout */}
       <div className="row g-4">
         {/* Loop through each skill and create a card */}
         {skills.map((skill, index) => (
-          <div className="col-md-3" key={index}>
-            <div className="card h-100 p-3 d-flex flex-row align-items-center">
+          <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
+            <div className="card h-100 shadow-sm border-0 rounded">
               {/* Skill image */}
               <img
                 src={skill.img}
                 alt={`${skill.title} Logo`}
-                style={{ width: "50px", height: "50px", marginRight: "10px" }}
+                className="card-img-top"
+                style={{ width: "60px", height: "60px", margin: "0 auto" }}
               />
               {/* Skill title and description */}
-              <div>
+              <div className="card-body text-center">
                 <h5 className="card-title mb-1">{skill.title}</h5>
                 <p className="card-text">{skill.description}</p>
               </div>
@@ -94,5 +95,4 @@ const Skill = () => {
   );
 };
 
-// Exporting Skill component to be used in other parts of the app
 export default Skill;
