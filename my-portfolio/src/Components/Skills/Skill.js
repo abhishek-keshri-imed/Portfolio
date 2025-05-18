@@ -15,17 +15,20 @@ const skills = [
   },
   {
     title: "Bootstrap",
-    description: "Frontend framework for faster, responsive website development.",
+    description:
+      "Frontend framework for faster, responsive website development.",
     img: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
   },
   {
     title: "JavaScript",
-    description: "Adds interactivity, logic, and dynamic behavior to web pages.",
+    description:
+      "Adds interactivity, logic, and dynamic behavior to web pages.",
     img: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
   },
   {
     title: "ReactJS",
-    description: "JavaScript library for building fast, interactive UIs using components.",
+    description:
+      "JavaScript library for building fast, interactive UIs using components.",
     img: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png",
   },
   {
@@ -45,22 +48,26 @@ const skills = [
   },
   {
     title: "C#",
-    description: "Object-oriented programming language for building modern applications.",
+    description:
+      "Object-oriented programming language for building modern applications.",
     img: "https://cdn-icons-png.flaticon.com/512/6132/6132221.png",
   },
   {
     title: "Python",
-    description: "High-level language famous for simplicity, data science, and AI.",
+    description:
+      "High-level language famous for simplicity, data science, and AI.",
     img: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
   },
   {
     title: "Selenium",
-    description: "Automation tool for testing web applications across browsers.",
+    description:
+      "Automation tool for testing web applications across browsers.",
     img: "https://img.icons8.com/?size=512&id=38553&format=png",
   },
   {
     title: "AWS",
-    description: "Cloud computing platform offering servers, storage, and services.",
+    description:
+      "Cloud computing platform offering servers, storage, and services.",
     img: "https://brandlogos.net/wp-content/uploads/2021/11/amazon_web_services-logo.png",
   },
 ];
@@ -68,10 +75,11 @@ const skills = [
 // Skill component to render the list of skills
 const Skill = () => {
   return (
-    <div className="container mt-4 mb-4">
+    <div className="containerskill mt-3 mb-4">
       {/* Row for responsive grid layout */}
       <div className="row g-4">
         {/* Loop through each skill and create a card */}
+        <h2 className="text-center mb-4">My Skills</h2>
         {skills.map((skill, index) => (
           <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
             <div className="card h-100 shadow-sm border-0 rounded">

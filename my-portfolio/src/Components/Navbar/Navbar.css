@@ -6,6 +6,9 @@
     /* Flexbox layout */
     justify-content: space-between;
     /* Space between left and right parts */
+    width: 83vw;
+    margin: 0 auto;
+    /* horizontal center */
 }
 
 /* Left section of the navbar (logo + toggle) */
@@ -42,11 +45,7 @@
     /* Normal font weight */
 }
 
-/* Container for the navigation list */
-.n-list {
-    flex: 10;
-    /* Take 10 times the space compared to button */
-}
+
 
 /* Styling the unordered list (ul) inside the list */
 .n-list>ul {
@@ -72,4 +71,10 @@
     /* Pointer cursor on hover */
     color: var(--orange);
     /* Change text color to orange (from :root variables) */
+}
+
+@media (max-width: 768px) {
+    .n-wrapper {
+        display: none;
+    }
 }

@@ -1,10 +1,21 @@
 /* ================= Container and Card Styling ================= */
-.container {
-  padding: 0;  /* Optional: removes container padding */
+.containerskill {
+  padding: 0;
+  /* Optional: removes container padding */
   justify-content: space-between;
-  width: 100%; /* Ensure container takes full width */
+  width: 83vw;
+  /* Ensure container takes full width */
   margin-top: 50vh;
-  
+  margin: 0 auto;
+  /* horizontal center */
+
+}
+
+.containerskill h2 {
+  font-size: 2rem;
+  color: #007acc;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .card {
@@ -35,6 +46,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -42,7 +54,7 @@
 
 /* ================= Media Queries for Responsiveness ================= */
 @media (max-width: 1053px) {
-  .container {
+  .containerskill {
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 50px;
@@ -70,7 +82,7 @@
 }
 
 @media (max-width: 576px) {
-  .container {
+  .containerskill {
     margin-top: 30px;
   }
 
