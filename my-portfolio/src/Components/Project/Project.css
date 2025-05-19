@@ -1,0 +1,95 @@
+.projects-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* ⬅️ Better spacing */
+  gap: 40px 0;
+  /* Optional: reduce horizontal gap */
+}
+
+.projectheading {
+  font-size: 2rem;
+  color: #007acc;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 20px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transform: scale(0.9);
+  /* 10% zoom in */
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1);
+  /* Slightly bigger on hover */
+}
+
+
+.project-content h3 {
+  margin: 10px 0;
+  font-size: 1.25rem;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 0;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the start (left) */
+    width: 100%;
+    /* ensure full width */
+    padding: 0;
+    /* remove any padding */
+    margin: 0;
+    /* remove any margin */
+  }
+
+  .project-card {
+    width: 100%;
+    /* More breathing room than 100% */
+    margin-bottom: 20px;
+    /* space between cards */
+  }
+}

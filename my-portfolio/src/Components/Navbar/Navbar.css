@@ -1,0 +1,88 @@
+/* Wrapper for the entire navbar */
+.n-wrapper {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    width: 83vw;
+    margin: 0 auto;
+}
+
+/* Left section of the navbar (logo + toggle) */
+.n-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Styling the name/logo */
+.n-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Right section of the navbar (menu list + button) */
+.n-right {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+/* Styling the unordered list (ul) inside the list */
+.n-list > ul {
+    display: flex;
+    gap: 2rem;
+    margin-right: 4rem;
+    list-style: none;
+}
+
+/* Styling individual list items (li) */
+.n-list > ul > li {
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    cursor: pointer !important; /* Pointer cursor on li */
+}
+
+/* Styling anchor tags inside li */
+.n-list > ul > li > a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    cursor: pointer !important; /* Pointer cursor on links */
+}
+
+/* Hover effect for menu items */
+.n-list > ul > li:hover,
+.n-list > ul > li:hover > a {
+    color: var(--orange);
+     cursor: pointer !important; /* Pointer cursor on links */}
+
+/* Button styling */
+.button {
+    padding: 0.6rem 1.3rem;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer !important; /* Pointer cursor on button */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #cc7000; /* Darker orange on hover */
+    cursor: pointer; /* hand cursor */
+    transform: scale(1.05); /* slight zoom in */
+    box-shadow: 0 4px 8px rgba(204, 112, 0, 0.5); /* subtle glow/shadow */
+    color: #FFFFE0;
+}
+
+/* Responsive: Hide navbar on small screens */
+@media (max-width: 768px) {
+    .n-wrapper {
+        display: none;
+    }
+}

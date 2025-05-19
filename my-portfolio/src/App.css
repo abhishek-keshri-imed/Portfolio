@@ -1,38 +1,84 @@
+/* ====== Define Global Variables (Theme Colors, Shadows) ====== */
+:root {
+  /* Primary colors */
+  --yellow: #F5C32C;
+  /* Bright Yellow */
+  --orange: #FCA61F;
+  /* Orange */
+  --black: #242D49;
+  /* Dark Black (for text) */
+  --gray: #788097;
+  /* Light Gray (for secondary text) */
+
+  /* Special colors */
+  --blueCard: #DDF8FE;
+  /* Light Blue for cards or highlights */
+  --purple: rgb(238, 210, 255);
+  /* Light Purple for background effects */
+
+
+
+
+  /* Shadows */
+  --boxShadow: 0px 19px 60px rgba(0, 0, 0, 0.08);
+  /* Main shadow for big elements */
+  --orangeCard: rgba(252, 166, 31, 0.45);
+  /* Semi-transparent orange for card backgrounds */
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  /* Special shadow for small elements */
+
+
+
+}
+
+/* ====== Main App Container Styling ====== */
 .App {
-  text-align: center;
+  /* Add padding inside the container: 
+     0.5rem (top/bottom), 3.5rem (left/right) */
+  padding: 0.5rem 3.5rem;
+
+  /* Hide anything that overflows outside the container */
+  overflow: hidden;
+
+  /* Set the default text color using the black variable */
+  color: var(--black);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.button {
+  border-radius: 34px;
+  /* Rounded corners (pill-shaped button) */
+  border: none;
+  /* No border */
   color: white;
+  /* Text color is white */
+  font-size: 16px;
+  /* Font size inside the button */
+  padding: 10px;
+  /* Space inside button around the text */
+
+  /* Background gradient from yellow to orange, vertically */
+  background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
+
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+.button:hover {
+  background: white;
+  /* When mouse hovers, background color becomes white */
+  cursor: pointer;
+  /* Cursor changes to a pointer (hand icon) to indicate it's clickable */
+  color: var(--orange);
+  /* Text color changes to the orange color you defined in :root */
+  border: 1px solid var(--orange);
+  /* Adds a thin 1px solid orange border around the button */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+
+/* Media Queries for Responsiveness */
+@media  screen and (max-width: 480px) {
+  .App
+  {
+  padding: 0.5rem 1rem;
   }
 }
