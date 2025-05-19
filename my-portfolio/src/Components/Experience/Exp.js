@@ -5,8 +5,8 @@ import React from "react";
 const Exp = () => {
   return (
     <>
-      <h2 className="mainheading text-center mt-5 mb-2">Career Timeline</h2>
-      <div className="containerexp mt-5">
+      <h2 className="mainheading text-center mt-5 mb-2" id="mainheading">Career Timeline</h2>
+      <div className="containerexp mt-5" id="containerexp">
         {/* Experience Column */}
         <div className="column">
           <h2>Experience</h2>

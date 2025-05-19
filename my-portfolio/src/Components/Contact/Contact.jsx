@@ -1,172 +1,167 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
+  const form = useRef();
   const [errors, setErrors] = useState({});
-  const [successMsg, setSuccessMsg] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const socialLinks = [
-    {
-      href: "https://www.linkedin.com/in/your-linkedin",
-      img: "https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png",
-      alt: "LinkedIn",
-    },
-    {
-      href: "https://github.com/your-github",
-      img: "https://yt3.googleusercontent.com/PKRBxhCiGa8Y0vPmHa1E2cdjpLhUq2Pl-gESwP7kk2plGgxLdsbjyTd9VjcJwBMiY0HQ8bvx5Q=s900-c-k-c0x00ffffff-no-rj",
-      alt: "GitHub",
-    },
-    {
-      href: "mailto:your@email.com",
-      img: "https://cdn2.iconfinder.com/data/icons/social-media-icons-23/800/instagram-512.png",
-      alt: "Email",
-    },
-  ];
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: "" });
-  };
-
-  const validate = () => {
+  const validate = (formData) => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Invalid email";
-    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
-    else if (!/^\d{10}$/.test(formData.phone))
-      newErrors.phone = "Phone must be 10 digits";
-    if (!formData.message.trim())
-      newErrors.message = "Message is required";
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address.";
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Enter a valid 10-digit phone number.";
+    }
+    if (!formData.message.trim()) newErrors.message = "Message is required.";
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    const validationErrors = validate();
+    const formData = {
+      name: form.current.name.value,
+      email: form.current.email.value,
+      phone: form.current.phone.value,
+      message: form.current.message.value,
+    };
+
+    const validationErrors = validate(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-    } else {
-      console.log("Form submitted:", formData);
-      setSuccessMsg("Your message has been sent successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setErrors({});
-      setTimeout(() => setSuccessMsg(""), 4000);
+      setSuccessMessage("");
+      return;
     }
+
+    emailjs
+      .sendForm(
+        "service_458rbwd",
+        "template_vcpkgpf",
+        form.current,
+        "Jbk844tv-icJSw2Dq"
+      )
+      .then(
+        () => {
+          setSuccessMessage("Message sent successfully!");
+          setErrors({});
+          form.current.reset();
+        },
+        (error) => {
+          setSuccessMessage("Failed to send message. Please try again later.");
+          console.error(error.text);
+        }
+      );
   };
 
   return (
-    <div className="contact-section">
+    <section className="contact-section" id="contact-section" >
       <div className="contact-form-container">
-        <h2>Contact Me</h2>
-        <form onSubmit={handleSubmit} noValidate>
+        <h2>Get in Touch</h2>
+        <form ref={form} onSubmit={sendEmail} noValidate>
           <div className="input-group">
-            <label htmlFor="name">Name *</label>
+            <label htmlFor="name">Name</label>
             <input
-              id="name"
-              name="name"
               type="text"
-              value={formData.name}
-              onChange={handleChange}
+              name="name"
               className={errors.name ? "error" : ""}
               placeholder="Your Name"
             />
-            {errors.name && (
-              <small className="error-text">{errors.name}</small>
-            )}
+            {errors.name && <p className="error-text">{errors.name}</p>}
           </div>
 
           <div className="input-group">
-            <label htmlFor="email">Email *</label>
+            <label htmlFor="email">Email</label>
             <input
-              id="email"
-              name="email"
               type="email"
-              value={formData.email}
-              onChange={handleChange}
+              name="email"
               className={errors.email ? "error" : ""}
-              placeholder="you@example.com"
+              placeholder="Your Email"
             />
-            {errors.email && (
-              <small className="error-text">{errors.email}</small>
-            )}
+            {errors.email && <p className="error-text">{errors.email}</p>}
           </div>
 
           <div className="input-group">
-            <label htmlFor="phone">Phone *</label>
+            <label htmlFor="phone">Phone</label>
             <input
-              id="phone"
+              type="text"
               name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={handleChange}
               className={errors.phone ? "error" : ""}
-              placeholder="1234567890"
+              placeholder="Your Phone Number"
             />
-            {errors.phone && (
-              <small className="error-text">{errors.phone}</small>
-            )}
+            {errors.phone && <p className="error-text">{errors.phone}</p>}
           </div>
 
           <div className="input-group">
-            <label htmlFor="message">Message *</label>
+            <label htmlFor="message">Message</label>
             <textarea
-              id="message"
               name="message"
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
+              rows="5"
               className={errors.message ? "error" : ""}
-              placeholder="Write your message..."
+              placeholder="Your Message"
             ></textarea>
-            {errors.message && (
-              <small className="error-text">{errors.message}</small>
-            )}
+            {errors.message && <p className="error-text">{errors.message}</p>}
           </div>
 
           <button type="submit" className="submit-button">
             Send Message
           </button>
-
-          {successMsg && <p className="success-msg">{successMsg}</p>}
+          {successMessage && (
+            <p
+              className={
+                successMessage.includes("successfully")
+                  ? "success-msg"
+                  : "error-text"
+              }
+            >
+              {successMessage}
+            </p>
+          )}
         </form>
 
         <div className="social-icons">
-          {socialLinks.map(({ href, img, alt }) => (
-            <a
-              key={alt}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <img src={img} alt={alt} />
-            </a>
-          ))}
+          <a
+            className="social-link"
+            href="https://www.linkedin.com/in/abhishek-keshri-a7a3b3192/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="LinkedIn"
+            />
+          </a>
+          <a
+            className="social-link"
+            href="https://github.com/abhishek-keshri-imed"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+              alt="GitHub"
+            />
+          </a>
         </div>
       </div>
 
       <div className="map-container">
         <iframe
-          title="My Location"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1324.859845074552!2d73.73253600752113!3d18.603911685959037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1747598436539!5m2!1sen!2sin"
+          title="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1880.9099528636186!2d73.73268710520924!3d18.603746369588904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb219642d56d%3A0x996bb548fbb425ba!2sOYO%20Ema%20Happy%20Stay!5e0!3m2!1sen!2sin!4v1747661056818!5m2!1sen!2sin"
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Contact;
-

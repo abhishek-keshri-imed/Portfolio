@@ -75,7 +75,7 @@ const skills = [
 // Skill component to render the list of skills
 const Skill = () => {
   return (
-    <div className="containerskill mt-3 mb-4">
+    <div className="containerskill mt-3 mb-4" id="containerskill">
       {/* Row for responsive grid layout */}
       <div className="row g-4">
         {/* Loop through each skill and create a card */}

@@ -2,8 +2,14 @@ import React from "react";
 import "./Intro.css";
 
 const Intro = () => {
+
+  const openCV = () => {
+    window.open("/cv/ABHISHEK_RESUME.pdf", "_blank", "noopener,noreferrer");
+  };
+
+
   return (
-    <div className="intro">
+    <div className="intro" id="intro">
       {/* Left Section */}
       <div className="i-left">
         <h2>Hi! I Am</h2>
@@ -14,7 +20,7 @@ const Intro = () => {
           banking applications and am passionate about problem-solving,
           continuous learning, and driving impactful projects.
         </p>
-        <button className="button i-button">Download CV</button>
+        <button className="button i-button" onClick={openCV}>Download CV</button>
       </div>
 
       {/* Right Section */}

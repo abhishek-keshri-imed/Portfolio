@@ -1,78 +1,86 @@
 /* Wrapper for the entire navbar */
 .n-wrapper {
-    height: 10vh;
-    /* 10% of viewport height */
+    height: 15vh;
     display: flex;
-    /* Flexbox layout */
     justify-content: space-between;
-    /* Space between left and right parts */
     width: 83vw;
     margin: 0 auto;
-    /* horizontal center */
 }
 
 /* Left section of the navbar (logo + toggle) */
 .n-left {
     flex: 1;
-    /* Take equal flexible space */
     display: flex;
-    /* Flexbox layout */
     align-items: center;
-    /* Center vertically */
     gap: 2rem;
-    /* Space between logo and toggle */
 }
 
 /* Styling the name/logo */
 .n-name {
     font-size: 1.3rem;
-    /* Font size */
     font-weight: bold;
-    /* Make text bold */
 }
 
 /* Right section of the navbar (menu list + button) */
 .n-right {
     display: flex;
-    /* Flexbox layout */
     flex: 1;
-    /* Take equal flexible space */
     align-items: center;
-    /* Center vertically */
     justify-content: center;
-    /* Center horizontally */
     font-weight: 400;
-    /* Normal font weight */
 }
 
-
-
 /* Styling the unordered list (ul) inside the list */
-.n-list>ul {
+.n-list > ul {
     display: flex;
-    /* Display menu items in a row */
     gap: 2rem;
-    /* Space between each menu item */
     margin-right: 4rem;
-    /* Margin at the right side */
     list-style: none;
-    /* Remove bullet points */
 }
 
 /* Styling individual list items (li) */
-.n-list>ul>li {
+.n-list > ul > li {
+    display: flex;
+    align-items: center;
     transition: color 0.3s ease;
-    /* Smooth color transition on hover */
+    cursor: pointer !important; /* Pointer cursor on li */
+}
+
+/* Styling anchor tags inside li */
+.n-list > ul > li > a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    cursor: pointer !important; /* Pointer cursor on links */
 }
 
 /* Hover effect for menu items */
-.n-list>ul>li:hover {
-    cursor: pointer;
-    /* Pointer cursor on hover */
+.n-list > ul > li:hover,
+.n-list > ul > li:hover > a {
     color: var(--orange);
-    /* Change text color to orange (from :root variables) */
+     cursor: pointer !important; /* Pointer cursor on links */}
+
+/* Button styling */
+.button {
+    padding: 0.6rem 1.3rem;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer !important; /* Pointer cursor on button */
+    transition: background-color 0.3s ease;
 }
 
+.button:hover {
+    background-color: #cc7000; /* Darker orange on hover */
+    cursor: pointer; /* hand cursor */
+    transform: scale(1.05); /* slight zoom in */
+    box-shadow: 0 4px 8px rgba(204, 112, 0, 0.5); /* subtle glow/shadow */
+    color: #FFFFE0;
+}
+
+/* Responsive: Hide navbar on small screens */
 @media (max-width: 768px) {
     .n-wrapper {
         display: none;

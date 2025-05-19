@@ -2,6 +2,15 @@ import React from "react";
 import "./Navbar.css";
 
 function Navbar() {
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
   return (
     <div className="n-wrapper">
       <div className="n-left">
@@ -10,13 +19,15 @@ function Navbar() {
       <div className="n-right">
         <div className="n-list">
           <ul style={{ listStyleType: "none" }}>
-            <li>Home</li>
-            <li>Skills</li>
-            <li>Experience</li>
-            <li>Portfolio</li>
+            <li><a href="#intro">Home</a></li>
+            <li><a href="#containerskill">Skills</a></li>
+            <li><a href="#mainheading">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
           </ul>
         </div>
-        <button className="button">Contact </button>
+       <button className="button" onClick={() => scrollToSection("contact-section")}>
+          Contact
+        </button>
       </div>
     </div>
   );
