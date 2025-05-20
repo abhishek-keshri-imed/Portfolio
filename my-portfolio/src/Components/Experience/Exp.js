@@ -12,7 +12,7 @@ const Exp = () => {
           <h2>Experience</h2>
           <div className="card">
             <h3>System Engineer, TCS</h3>
-            <p>Sep 2024 – Present (Full Stack Developer)</p>
+            <p>Sep 2022 – Present (Full Stack Developer)</p>
           </div>
           <div className="card">
             <h3>Intern @ Posit Source Technologies</h3>

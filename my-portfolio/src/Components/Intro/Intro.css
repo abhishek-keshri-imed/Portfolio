@@ -6,7 +6,6 @@
   margin: 0 auto;
   padding: 2rem 0;
   gap: 2rem;
-  height: 90vh;
 }
 
 /* Left Section */
@@ -69,7 +68,7 @@
     flex-direction: column;
     height: auto;
     text-align: center;
-    margin-bottom: 130px;
+    margin-bottom: 20px;
   }
 
   .i-left,
@@ -83,7 +82,7 @@
 
   .i-right img {
     width: 70%;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .i-button {
